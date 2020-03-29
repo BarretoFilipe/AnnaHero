@@ -25,13 +25,13 @@ module.exports = {
   },
 
   async create(request, response) {
-    const { title, description, value } = request.body;
+    const { title, description, amount } = request.body;
     const organization_id = request.headers.authorization;
 
     const [id] = await connection("incident").insert({
       title,
       description,
-      value,
+      amount,
       organization_id
     });
 
@@ -47,7 +47,7 @@ module.exports = {
       .select("organization_id")
       .first();
 
-    if (incident.organization_id != organization_id) {
+    if (incident.organization_id !== organization_id) {
       return response.status(401).json({ error: "Operation not permitted." });
     }
 
