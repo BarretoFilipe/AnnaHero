@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-
 import { Link, useHistory } from "react-router-dom";
-
-import api from "../../services/api";
 
 import { FiLogIn } from "react-icons/fi";
 import "./styles.css";
-
 import logoImg from "../../assets/logo.svg";
 import heroesImg from "../../assets/heroes.png";
+
+import api from "../../services/api";
 
 export default function Logon() {
   const [id, setId] = useState("");
@@ -35,7 +33,6 @@ export default function Logon() {
 
         <form onSubmit={handleLogin}>
           <h1>Welcome</h1>
-
           <input
             placeholder="Your ID"
             value={id}
@@ -44,7 +41,6 @@ export default function Logon() {
           <button className="button" type="submit">
             Login
           </button>
-
           <Link className="back-link" to="/register">
             <FiLogIn size={16} color="#e02041" />
             Sign Up! It's quick and easy.

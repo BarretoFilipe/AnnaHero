@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-
 import { Link, useHistory } from "react-router-dom";
-import { FiArrowLeft } from "react-icons/fi";
 
+import { FiArrowLeft } from "react-icons/fi";
 import "./styles.css";
 import logoImg from "../../assets/logo.svg";
+
 import api from "../../services/api";
 
 export default function Register() {

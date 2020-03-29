@@ -10,7 +10,6 @@ module.exports = {
 
   async create(request, response) {
     const { name, email, phone, city, district } = request.body;
-
     const id = crypto.randomBytes(4).toString("HEX");
 
     await connection("organization").insert({

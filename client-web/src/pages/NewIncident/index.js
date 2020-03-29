@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-
-import api from "../../services/api";
 import { Link, useHistory } from "react-router-dom";
 
 import { FiArrowLeft } from "react-icons/fi";
 import "./styles.css";
 import logoImg from "../../assets/logo.svg";
+
+import api from "../../services/api";
 
 export default function NewIncident() {
   const [title, setTitle] = useState("");
@@ -65,7 +65,6 @@ export default function NewIncident() {
             value={amount}
             onChange={e => setAmount(e.target.value)}
           />
-
           <button className="button" type="submit">
             Register
           </button>
